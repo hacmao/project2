@@ -21,7 +21,8 @@ optional arguments:
 # List of options    
 
 ### List :   
-Liệt kê tất cả chương trình đã được cài đặt trong máy mà project này hỗ trợ, đồng thời update file ```Database/current_version.json```.   
+Liệt kê tất cả chương trình đã được cài đặt trong máy mà project này hỗ trợ, đồng thời update file ```Database/current_version.json```.     
+
 ![](/img/hinh1.PNG)   
 
 
