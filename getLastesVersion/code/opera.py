@@ -9,5 +9,8 @@ def getVersion() :
     version = soup.find_all('td')[1]
     return version.string
 
+def getName() : 
+    return "Opera" 
+    
 if __name__ == '__main__' : 
     print(getVersion())

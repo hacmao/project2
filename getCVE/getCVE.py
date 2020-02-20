@@ -1,7 +1,7 @@
 import vulnerable
 import requests 
 from bs4 import BeautifulSoup 
-
+from packaging.version import parse  
 
 '''
 get number of pages  
@@ -46,11 +46,11 @@ def get_vulnerable_url (page_url) :
         vuln_list.append(vuln) 
     return vuln_list 
 
+
 '''
 get vulnerable by version 
 '''
-def get_vulnerable_ver(version) : 
-    url = 'https://www.cvedetails.com/version-list/1224/15031/1/Google-Chrome.html' 
+def get_vulnerable_ver(check_version, url) : 
     rsp = requests.get(url) 
     soup = BeautifulSoup(rsp.text, 'lxml') 
     num_pages, pages_url = get_number_pages(soup) 
@@ -58,10 +58,19 @@ def get_vulnerable_ver(version) :
         rows = get_rows_table(pages_url[i]) 
         for r in rows : 
             colums = r.find_all('td') 
-            if (colums[0].string.strip() == version) : 
+            vuln_version = colums[0].string.strip()
+            if (vuln_version == check_version) or vuln_version in ["-", ""]: 
                 vuln_url = 'https://www.cvedetails.com' + colums[5].find_all('a')[1].attrs['href'] 
                 return get_vulnerable_url(vuln_url)  
+
+            if parse(vuln_version) < parse(check_version) : 
+                return []
             
 if __name__ == '__main__' : 
-    vuln_list = get_vulnerable_ver('74.0.3729.131') 
-    vuln_list[0].get_info()
+    url = 'https://www.cvedetails.com/version-list/26/50646/1/Microsoft-Visual-Studio-Code.html' 
+    vuln_list = get_vulnerable_ver('69.0', url)  
+    if len(vuln_list) == 0 : 
+        print("No vulnerable")
+    else : 
+        for vuln in vuln_list : 
+            vuln.get_info() 

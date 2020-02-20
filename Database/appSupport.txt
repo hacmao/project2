@@ -1,0 +1,5 @@
+Google Chrome
+Microsoft Edge Beta
+Mozilla Firefox
+Opera
+Visual Studio Code

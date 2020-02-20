@@ -1,0 +1,6 @@
+argparse
+termcolor
+lxml
+bs4
+winapps
+requests
