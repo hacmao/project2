@@ -1,4 +1,4 @@
-# How to install   
+# How to install package    
 
 ```bash
 python -m pip install -r requirements.txt
@@ -7,6 +7,7 @@ python -m pip install -r requirements.txt
 # How to run   
 
 ```bash
+python main.py -h    
 usage: main.py [-h] [--list] [--updateDB UPDATEDB] [--support] [--checkUpdate]
                [--checkVulnerable]
 
