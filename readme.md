@@ -18,21 +18,34 @@ optional arguments:
   --checkUpdate        Check update for supported applications
   --checkVulnerable    Search CVEdetails about installed version
 ```
-# Ảnh minh họa :    
+# List of options    
 
 ### List :   
-Liệt kê tất cả chương trình đã được cài đặt trong máy mà project này hỗ trợ, đồng thời update file ```Database/current_version.json```.    
+Liệt kê tất cả chương trình đã được cài đặt trong máy mà project này hỗ trợ, đồng thời update file ```Database/current_version.json```.   
+![](/img/hinh1.PNG)   
+
 
 ### UpdateDB :    
 Update newest version trong file ```Database/new_version.json```.    
 
+![](/img/hinh1.PNG)   
+
+
 ### support :    
 Liệt kê tất cả các chương trình mà project này hỗ trợ.   
+
+![](/img/hinh1.PNG)   
+
 
 ### checkUpdate :     
 Liệt kê tất cả chương trình có thể update lên phiên bản cao hơn.    
 
+![](/img/hinh1.PNG)   
+
+
 ### checkVulnerable :   
 Liệt kê tất cả lỗ hổng của phiên bản hiện tại, nếu mà không có in ra ```No vulnerable```.    
+
+![](/img/hinh1.PNG)   
 
 
